@@ -8,7 +8,7 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get('create')
-  @Render('users/create-user.html')
+  @Render('users/create-users.html')
   createForm() {
   }
 

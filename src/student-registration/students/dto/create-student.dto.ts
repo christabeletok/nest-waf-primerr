@@ -13,6 +13,6 @@ export class CreateStudentDto {
     readonly stateofBirth: string
     readonly residenceAddress: string
     readonly profession: string
-  user: any;
-   //In case you want to create a user along with student
+    readonly user: CreateUserDto;
+   
     }

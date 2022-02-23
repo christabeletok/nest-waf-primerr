@@ -1,6 +1,6 @@
 export class CreateUserDto {
-    readonly bvn: number;
-    readonly nin: number;
-    readonly mobileNumber: number;
+    readonly bvn?: string;
+    readonly nin?: string;
+    readonly mobileNumber?: string;
     readonly isActive?: boolean;
 }

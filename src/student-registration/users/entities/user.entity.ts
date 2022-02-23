@@ -6,16 +6,17 @@ export class User{
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
-    bvn: number;
+    @Column({nullable: true})
+    bvn: string;
 
-    @Column()
-    nin: number;
+    @Column({nullable: true})
+    nin: string;
 
-    @Column()
-    mobileNumber: number;
+    @Column({nullable: true})
+    mobileNumber: string;
 
     @Column({ default: true })
     isActive: boolean;
+
     student: any
     }

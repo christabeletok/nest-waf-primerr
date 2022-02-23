@@ -86,9 +86,32 @@
                         <input class="input" id="profession" name="profession" type="text" placeholder="Profession" required>
                     </div>
                 </div>
-                
-                
-                
+                <div class="field">
+                    <label class="label">BVN:</label>
+                    <div class="control has-icons-right">
+                        <input class="input" id="bvn" name="bvn" type="integer" placeholder="BVN" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">NIN:</label>
+                    <div class="control has-icons-right">
+                        <input class="input" id="nin" name="nin" type="integer" placeholder="NIN" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Mobile Number:</label>
+                    <div class="control has-icons-right">
+                        <input class="input" id="mobileNumber" name="mobileNumber" type="integer" placeholder="Mobile Number" required>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button type="submit" id="submitCreateUserForm" class="button is-link is-small">Submit</button>
+                    </div>
+                    <div class="control">
+                        <button type="reset" class="button is-light is-small">Clear</button>
+                    </div>
+                </div>
             </fieldset>
         </form>
         
@@ -110,7 +133,7 @@
 
 
 
-{% endblock %}
+
 
 <script>
     const createUserForm = document.getElementById('createUserForm');
@@ -170,6 +193,21 @@
         profession.reportValidity();
         return false;   
     } 
+    const bvn = document.getElementById('bvn').value;
+    if (bvn == '') {
+        bvn.reportValidity();
+        return false;   
+    } 
+    const nin = document.getElementById('nin').value;
+    if (nin == '') {
+        nin.reportValidity();
+        return false;   
+    } 
+    const mobileNumber = document.getElementById('mobileNumber').value;
+    if (mobileNumber == '') {
+        mobileNumber.reportValidity();
+        return false;   
+    } 
         
 
 
@@ -183,7 +221,7 @@
             'Content-Type': 'application/json'
         },
         //credentials: 'same-origin',
-        body: JSON.stringify({ firstName, middleName, lastName, countryofBirth, dateOfBirth, nationality, townofBirth, stateofBirth, residenceAddress, profession })
+        body: JSON.stringify({ bvn, nin, mobileNumber, user: {firstName, middleName, lastName, countryofBirth, dateOfBirth, nationality, townofBirth, stateofBirth, residenceAddress, profession }})
     }
 
     //call fetch
@@ -215,3 +253,5 @@
     })
 
 </script>
+
+{% endblock %}
